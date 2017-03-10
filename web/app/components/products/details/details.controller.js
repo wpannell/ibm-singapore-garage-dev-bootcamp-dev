@@ -1,8 +1,12 @@
-function DetailsController(productsService) {
+function DetailsController(productsService, $scope) {
   let vm = this;
   vm.title = 'Products';
   vm.products = [];
   vm.message = ''; // initial error message
+
+  $scope.$on('aCustomEvent', function (event, data){
+    console.log('a custom event received: ' + data);
+  });
 
   vm.getProducts = function () {
     productsService.getProducts(vm.handleSuccess, vm.handleError);
@@ -28,6 +32,6 @@ function DetailsController(productsService) {
   vm.getProducts();
 }
 
-DetailsController.$inject = ['productsService'];
+DetailsController.$inject = ['productsService', '$scope'];
 
 export {DetailsController};
