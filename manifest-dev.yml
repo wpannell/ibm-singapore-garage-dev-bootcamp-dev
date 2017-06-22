@@ -6,5 +6,5 @@ applications:
   domain: mybluemix.net
   name: ibm-singapore-garage-dev-bootcamp-dev
   host: ibm-singapore-garage-dev-bootcamp-dev
-  disk_quota: 1024M
+  disk_quota: 256M
   command: npm start
